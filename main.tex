@@ -1,0 +1,105 @@
+\documentclass[]{interact}
+
+\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
+\usepackage[caption=false]{subfig}% Support for small, `sub' figures and tables
+%\usepackage[nolists,tablesfirst]{endfloat}% To `separate' figures and tables from text if required
+%\usepackage[doublespacing]{setspace}% To produce a `double spaced' document if required
+%\setlength\parindent{24pt}% To increase paragraph indentation when line spacing is doubled
+
+% Citation support using natbib.sty
+\usepackage[longnamesfirst,sort]{natbib}
+\bibpunct[, ]{(}{)}{;}{a}{,}{,}
+\renewcommand\bibfont{\fontsize{10}{12}\selectfont}% To set the list of references in 10 point font using natbib.sty
+
+%\usepackage[natbibapa,nodoi]{apacite}% Citation support using apacite.sty. Commands using natbib.sty MUST be deactivated first!
+%\setlength\bibhang{12pt}% To set the indentation in the list of references using apacite.sty. Commands using natbib.sty MUST be deactivated first!
+%\renewcommand\bibliographytypesize{\fontsize{10}{12}\selectfont}% To set the list of references in 10 point font using apacite.sty. Commands using natbib.sty MUST be deactivated first!
+
+\theoremstyle{plain}% Theorem-like structures provided by amsthm.sty
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+
+
+%% Shorthand
+
+\newcommand{\term}[1]{\emph{#1\/}}
+\newcommand{\quotes}[1]{`#1'}
+
+\newcommand{\comment}[2]
+{
+\begin{quote}
+\textbf{#1:}
+     #2
+\end{quote}
+}
+%\renewcommand{\comment}[2]{}
+
+
+\begin{document}
+
+%\articletype{ARTICLE TEMPLATE} % Specify the article type or omit as appropriate
+
+\title{Reasoning}
+
+\author{
+  \name{Eirini Vandorou\textsuperscript{a,b}%
+    \thanks{CONTACT E. Vandorou. Email: eirinivand@gmail.com}
+    and Stasinos Konstantopoulos%
+    \textsuperscript{b}}
+  \affil{\textsuperscript{a}UniPi and NCSR? NCSR, while studying;
+    \textsuperscript{b}Institute of Informatics and
+    Telecommunications, NCSR \quotes{Demokritos}, Greece}
+}
+%% TODO: ask acharal and emiris if they want to contribute
+
+\maketitle
+
+\begin{abstract}
+This articles is about reasoning.
+\end{abstract}
+
+\begin{keywords}
+Reasoning; mathematics; Euclid
+\end{keywords}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+\comment{TODO Stasinos}{later}
+
+
+\section{Background}
+\label{sec:bg}
+
+\comment{TODO Eirini}{Bring in text from thesis document}
+
+
+\section{We Need A Name}
+\label{sec:foreground}
+
+\comment{TODO Eirini}{later}
+
+
+\section{Implementation and Validation}
+\label{sec:impl}
+\label{sec:eval}
+
+\comment{TODO Eirini}{later}
+
+
+\section{Conclusions}
+\label{sec:conc}
+
+
+\end{document}
