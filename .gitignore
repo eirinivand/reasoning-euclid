@@ -1,0 +1,15 @@
+.DS_Store
+*.aux
+*.blg
+*.lof
+*.log
+*.lot
+*.toc
+*.fls
+*.dvi
+*.fdb_latex
+*.nav
+*.out
+*.snm
+*.vrb
+*~
