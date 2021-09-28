@@ -1,6 +1,6 @@
 
-%.pdf : %.tex
-	TEXMFHOME="./texmf//:./figures//:$(kpsewhich -var-value TEXMFHOME)" pdflatex $<
+%.pdf : %.tex %.bbl
+	TEXMFHOME="./texmf//:$(kpsewhich -var-value TEXMFHOME)" pdflatex $<
 
 
 clean:

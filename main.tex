@@ -1,21 +1,29 @@
 \documentclass[]{interact}
 
-\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
-\usepackage[caption=false]{subfig}% Support for small, `sub' figures and tables
-%\usepackage[nolists,tablesfirst]{endfloat}% To `separate' figures and tables from text if required
-%\usepackage[doublespacing]{setspace}% To produce a `double spaced' document if required
-%\setlength\parindent{24pt}% To increase paragraph indentation when line spacing is doubled
+\graphicspath{{figures/}}
 
-% Citation support using natbib.sty
-\usepackage[longnamesfirst,sort]{natbib}
-\bibpunct[, ]{(}{)}{;}{a}{,}{,}
-\renewcommand\bibfont{\fontsize{10}{12}\selectfont}% To set the list of references in 10 point font using natbib.sty
+% Support for .eps illustrations
+\usepackage{epstopdf}
 
-%\usepackage[natbibapa,nodoi]{apacite}% Citation support using apacite.sty. Commands using natbib.sty MUST be deactivated first!
-%\setlength\bibhang{12pt}% To set the indentation in the list of references using apacite.sty. Commands using natbib.sty MUST be deactivated first!
-%\renewcommand\bibliographytypesize{\fontsize{10}{12}\selectfont}% To set the list of references in 10 point font using apacite.sty. Commands using natbib.sty MUST be deactivated first!
+% Support for small, `sub' figures and tables
+\usepackage[caption=false]{subfig}
 
-\theoremstyle{plain}% Theorem-like structures provided by amsthm.sty
+% To `separate' figures and tables from text if required
+%\usepackage[nolists,tablesfirst]{endfloat}
+
+% To produce a `double spaced' document if required
+%\usepackage[doublespacing]{setspace}
+
+% To increase paragraph indentation when line spacing is doubled
+%\setlength\parindent{24pt}
+
+% Citation support
+\usepackage[natbibapa,nodoi]{apacite}
+\setlength\bibhang{12pt}
+\renewcommand\bibliographytypesize{\fontsize{10}{12}\selectfont}
+
+% Theorem-like structures provided by amsthm.sty
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -47,7 +55,8 @@
 
 \begin{document}
 
-%\articletype{ARTICLE TEMPLATE} % Specify the article type or omit as appropriate
+% Specify the article type or omit as appropriate
+%\articletype{ARTICLE TEMPLATE}
 
 \title{Reasoning}
 
@@ -82,7 +91,205 @@ Reasoning; mathematics; Euclid
 \section{Background}
 \label{sec:bg}
 
-\comment{TODO Eirini}{Bring in text from thesis document}
+
+\subsection{Automated Deduction for Geometry Theorems}
+\label{sec:atp-geometry}
+
+\citet{AVIGAD2009} present a formal system that models
+Books I to IV from Euclid's Elements. In order to address the matter
+of facts that Euclid takes as observations from the diagram, they set
+a list of axioms to replace the conclusions derived from the diagram
+Euclid constructs. These axioms are in their core rules that depict
+the diagram's purpose and part in the proof. They state that in some
+cases where Euclid reads geometric relations directly from the
+diagram, in their system this has to be met with one of the system's
+rules. These axioms are divided into categories according to the
+impact they depict from the diagram.
+
+First are \term{construction rules} these are the base of their rule
+system and are described as the
+\quotes{built-in theorems that are available from the start}.
+The construction rules include rules about points, lines, circles and
+intersections of the above.
+
+Then they define the \term{diagrammatic inference} axioms, which
+replace the diagram's purpose.
+
+Then are the rules about \term{transfer inferences} on the diagrams,
+their intention is to depict how the changes on a diagram, as Euclid
+describes them, apply on their facts.
+
+The last rules they define are about \term{superposition inferences},
+these rules are about how one diagram relates to another and the rules
+that apply to the former apply to the latter as well.
+
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale=0.5]{avigad-fig8-I9}
+  \caption[Avigad et al Approach I.9]{Two cases for Proposition~I.9
+    considered by \citet{AVIGAD2009}.}
+  \label{fig:avigadi9}
+\end{figure}
+
+
+They conclude this section by explaining the \term{direct consequence}
+notion, that they based their approach on. However, while Euclid takes
+some parts of the construction as granted, in their system they claim
+that more specificity is needed in order to make use of their rules.
+In one of the examples they give is with Proposition I.9., where
+Euclid generates a triangle $dfe$ (as seen in
+Figure~\ref{fig:avigadi9}), they claim that the $f$ point needs more
+clarification for its placing in the diagram because it may fall out
+of the $dae$ angle, which is not true. If one follows Euclid's
+direction for the construction the $f$ point does cut the angle in
+half and it's impossible to be placed in the position they claim.
+Euclid's directions state that to place the $f$ point one must
+construct an equilateral triangle using his proposition I.1 with $de$
+as a base. Creating an equilateral triangle would place point $f$
+exactly in a positions precisely cutting the $dae$ angle in half when
+one connects $f$ and $a$. Another example the use is the one of
+proposition I.35 (as seen in Figure~\ref{fig:avigadi35}), in this case
+there is a lot more to be discussed. While all three cases that they
+present as figures can be generated solely from the proposition's
+statement, the construction steps of the proposition eliminate the
+second where there is one point less.
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{avigad-fig9-I35}
+  \caption[Avigad et al Approach I.35]{Three cases for
+    Proposition~I.35 considered by Avigad et al. \cite{AVIGAD2009}.}
+  \label{fig:avigadi35}
+\end{figure}
+
+However, Euclid's aim is to prove the proposition, and while the proof
+might not be exactly the same for all the cases considered in
+Figure~\ref{fig:avigadi35}, the proposition is true for all which is
+of most importance. Euclid is vague enough where he should be, since
+his intend is to reuse the propositions through out his work, should
+he have been more precise other proofs that use this one might not be
+provable. It appears that Euclid is making use of the open world
+assumption, which makes his work all the more attractive to potential
+representation.
+
+Last but not least, I will refer to their statement of Euclid not
+stating enough information in his constructions. They take as an
+example proposition I.2, claiming that point $a$ is may not be inside
+circle $\beta$ and a clarification of $da<dg$ should be made. This is
+again misinterpreted since if one follows Euclid's steps to the
+construction, even if $a$ fell out of circle the entire proof still
+stands true. To prove this, one can consider the case where $ab>bc$
+for which constructed Figure~\ref{fig:mepropi2}. In this case the
+circle with center $B$ or circle $\alpha$, would intersect with line
+segment $Bd2$ (or $db$ in Figure~\ref{fig:avigadi2}) in two points.
+When one takes the point that is between $d2$ and $B$ to name $h2$ and
+forms circle with center $d2$ and radius of $d2h2$ or $\beta$. Then
+line segment $Ad2$ intersects with circle $\beta$ at point $l2$ and
+Euclid's proof stands exactly the same, even in this case, since again
+the proposition's aim was to create a line segment from $A$ equal to
+$BC$ and that is achieved.
+
+
+\begin{figure}
+  \centering
+
+  \subfloat[Proposition~I.2 as formed by \citet{AVIGAD2009}.]{%
+    \resizebox*{0.3\textwidth}{!}{\includegraphics[scale=0.7]{avigad-I2}}}
+  \hspace{3pt}
+
+  \subfloat[Proposition~I.2 as formed by \citet{AVIGAD2009}.]{%
+    \resizebox*{0.3\textwidth}{!}{\includegraphics[scale=0.6]{avigad-I2-alt}}}
+
+  \caption{Different representations of Proposition I.2}
+  \label{fig:poropi2:in2}
+\end{figure}
+
+
+The latest approach on Euclid seems to be the on of Beeson et al.
+\cite{beeson2019proof} where they approach the matter of
+\quotes{Proof-checking Euclid}.
+In their approach they used a custom designed representation of
+Euclid's Elements. In this representation they merged every axiom,
+definition, postulate, lemma and proposition into respective letters
+or combination of such.
+The most natural thing in doing so, following Euclid, is to name
+variables with one character. Then, they used two-character names for
+the relations since they exceed 24, and used $AN$, $OR$ and $NO$ for
+conjuctions, disjunctions and negations respectively.
+In their approach they do not follow Euclid's ways of proving and also
+do not follow the same order as his. They seem to approach
+superposition as equality between figures, and as they mention in
+section Checking the proofs in Coq, they had to adapt to the tool and
+reused theorems as implicit assumptions for each lemma. They claim
+that their approach is more complete and adds to Euclid's work and
+that they are the first to do a non-paper-and-pencil formalization
+that proves correct and valid Book I of Euclid and their
+\quotes{corrected proofs of those propositions, close to Euclid's ideas}.
+However, they too do not interpret superposition in the way Euclid
+does and try to find other ways around this in the construction of
+propositions and their proofs. For example, when they say that
+proposition I.9 cannot be proved using I.1 and they try to work around
+this.
+
+
+\subsection{Diagrammatic Inference}
+\label{sec:diagr-infer}
+
+On the other hand, there are systems that act on diagrams like the one
+of \citet{Miller2001ADF}. In his approach Miller creates a
+collection of rules that are divided into categories according to the
+implication of the rule on the diagram, similar to the ones of Avigad
+et al. First are the construction rules, inference rules follow and
+then transformation rules. He treats superposition as
+\term{lemma incorporation}, for which he defines and proves a theorem.
+Miller's \term{Lemma Incorporation Theorem} is used in his system to
+identify the forms that a diagram may take supposing an ancestor diagram.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{euclid-I1}
+    \caption{General representation of diagram from proposition I.1}
+  \end{subfigure}
+  \hfil
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{miller-fig320-I1}
+    \caption{Resulting image of Proposition I.1 from Miller \cite{Miller2001ADF}.}
+  \end{subfigure}
+  
+  \caption{Different representations of Proposition I.1}
+  \label{fig:milleri1}
+\end{figure}
+
+This becomes useful in the sense of using this lemma to get the
+superposition effect by isolating the diagram requiring superposition
+from the parent diagram, applying is to a smaller \quotes{environment}
+and using the result in the parent diagram. Miller concludes this
+section with the presentation of the system CDEG that makes use of all
+the above. CDEG diagrams are not as conservative and not easy to read,
+an example diagram is the one of Figure~\ref{fig:milleri1} which is
+the result of CDEG on proposition I.1 of Euclid.
+
+The main issue with this approach is that it does not fully take
+advantage of what Euclid essentially aims at, which is also the major
+issue that most publications have difficulty interpreting.
+
+Euclid does indeed have some more vague points, on the contrary to
+what these publications suggest, work best through his work, since the
+vague points are not important to the application of a proposition,
+rather opportunities to apply them even more times. The vague point
+need no more clarification, if ones does specify in more detail the
+context of each proposition might become more logically complete, but
+it will lose the point of versatility.
+
+One approach acts directly on diagrams \cite{Miller2001ADF} the other
+solely with logic \cite{AVIGAD2009,beeson2019proof} to tackle the
+problem. However, Euclid relies both on diagrams and logic in his
+proofs. To encode so much information may be challenging, which means
+that, isolating one or the other requires even more effort in
+designing and applying such a method.
 
 
 \section{We Need A Name}
@@ -101,5 +308,7 @@ Reasoning; mathematics; Euclid
 \section{Conclusions}
 \label{sec:conc}
 
+\bibliographystyle{apacite}
+\bibliography{references}
 
 \end{document}
