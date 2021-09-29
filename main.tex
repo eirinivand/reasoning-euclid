@@ -91,11 +91,40 @@ Reasoning; mathematics; Euclid
 \section{Background}
 \label{sec:bg}
 
+The most widely known mathematician in geometry is Euclid form Ancient
+Greece and Euclid's most renowned work are the \textit{Elements}
+\citep{heath:1956}. The Elements consist of thirteen books, the first
+six being about geometry. In the first book Euclid starts by stating
+the perquisites for the rest of his books by declaring twenty three
+definitions, five postulates and nine axioms. After the axioms, the
+propositions and their proofs begin.
+
+A proposition by Euclid consist of some given statements, the
+construction part and the proof. The given statements represent the
+base upon which he will built the construction and then the proof, so
+as to conclude to the proposition.  A basic characteristic of Euclid's
+Elements is that each proposition once it is proven, it is considered
+as given knowledge and so it is used inside other later propositions.
+
+Although the Elements where considered flawless for many years,
+Euclid's work was not as clear concerning the purity of logic, instead
+there where many times in which he would use non-logically proven
+assumptions \citep[Sections~1.1 and~2]{harrison:2009}.
+
 
 \subsection{Automated Deduction for Geometry Theorems}
 \label{sec:atp-geometry}
 
-\citet{AVIGAD2009} present a formal system that models
+Whether that was because
+something came from observation or from assumption. This is where
+Hilbert\cite{hilbert1899geometrie} firstly stepped in and axiomatized
+Euclid's geometry by redefining the basis of Euclid's definitions,
+replacing and removing some axioms concerning the plane. There are
+also other known axiomatizations of the Elements such as
+Tarski's~\cite{tarski1959elementary} and
+Birkhoff's~\cite{birkhoff1932set}.
+
+\citet{avigad-etal:2009} present a formal system that models
 Books I to IV from Euclid's Elements. In order to address the matter
 of facts that Euclid takes as observations from the diagram, they set
 a list of axioms to replace the conclusions derived from the diagram
@@ -114,6 +143,7 @@ intersections of the above.
 
 Then they define the \term{diagrammatic inference} axioms, which
 replace the diagram's purpose.
+%TODO: explain how these are not the same as diagrammatic inference below
 
 Then are the rules about \term{transfer inferences} on the diagrams,
 their intention is to depict how the changes on a diagram, as Euclid
@@ -128,7 +158,7 @@ that apply to the former apply to the latter as well.
   \centering
   \includegraphics[scale=0.5]{avigad-fig8-I9}
   \caption[Avigad et al Approach I.9]{Two cases for Proposition~I.9
-    considered by \citet{AVIGAD2009}.}
+    considered by \citet{avigad-etal:2009}.}
   \label{fig:avigadi9}
 \end{figure}
 
@@ -160,7 +190,7 @@ second where there is one point less.
   \centering
   \includegraphics[scale=0.7]{avigad-fig9-I35}
   \caption[Avigad et al Approach I.35]{Three cases for
-    Proposition~I.35 considered by Avigad et al. \cite{AVIGAD2009}.}
+    Proposition~I.35 considered by Avigad et al. \cite{avigad-etal:2009}.}
   \label{fig:avigadi35}
 \end{figure}
 
@@ -181,9 +211,11 @@ circle $\beta$ and a clarification of $da<dg$ should be made. This is
 again misinterpreted since if one follows Euclid's steps to the
 construction, even if $a$ fell out of circle the entire proof still
 stands true. To prove this, one can consider the case where $ab>bc$
-for which constructed Figure~\ref{fig:mepropi2}. In this case the
-circle with center $B$ or circle $\alpha$, would intersect with line
-segment $Bd2$ (or $db$ in Figure~\ref{fig:avigadi2}) in two points.
+giving Figure~\ref{fig:prop-i2} (right). In this case the
+circle with center $B$ (correspinding to circle $\alpha$ on the
+left-hand side figure), would intersect with line
+segment $Bd2$ (right) or $db$ (left) in two points.
+%% TODO rewrite
 When one takes the point that is between $d2$ and $B$ to name $h2$ and
 forms circle with center $d2$ and radius of $d2h2$ or $\beta$. Then
 line segment $Ad2$ intersects with circle $\beta$ at point $l2$ and
@@ -195,38 +227,55 @@ $BC$ and that is achieved.
 \begin{figure}
   \centering
 
-  \subfloat[Proposition~I.2 as formed by \citet{AVIGAD2009}.]{%
+  \subfloat[Proposition~I.2 as formed by Avigad et al.]{%
     \resizebox*{0.3\textwidth}{!}{\includegraphics[scale=0.7]{avigad-I2}}}
   \hspace{3pt}
 
-  \subfloat[Proposition~I.2 as formed by \citet{AVIGAD2009}.]{%
+  \subfloat[The counter-example that Avigad et al. offer to argue that  ]{%
     \resizebox*{0.3\textwidth}{!}{\includegraphics[scale=0.6]{avigad-I2-alt}}}
 
-  \caption{Different representations of Proposition I.2}
-  \label{fig:poropi2:in2}
+  \caption{Different diagrams that both support the proof of Proposition~I.2}
+  \label{fig:prop-i2}
 \end{figure}
 
 
-The latest approach on Euclid seems to be the on of Beeson et al.
-\cite{beeson2019proof} where they approach the matter of
-\quotes{Proof-checking Euclid}.
-In their approach they used a custom designed representation of
-Euclid's Elements. In this representation they merged every axiom,
-definition, postulate, lemma and proposition into respective letters
-or combination of such.
-The most natural thing in doing so, following Euclid, is to name
-variables with one character. Then, they used two-character names for
-the relations since they exceed 24, and used $AN$, $OR$ and $NO$ for
-conjuctions, disjunctions and negations respectively.
+The latest approach on Euclid
+by \citet{beeson-etal:2019} approaches the matter of
+\quotes{proof-checking Euclid}.
+In their approach they used a custom-designed representation of
+Euclid's Elements.
+
+%% NOTE: Technical detail. To be deleted.
+%% In this representation they merged every axiom, definition,
+%% postulate, lemma and proposition into respective letters or
+%% combination of such.  The most natural thing in doing so, following
+%% Euclid, is to name variables with one character. Then, they used
+%% two-character names for the relations since they exceed 24, and
+%% used $AN$, $OR$ and $NO$ for conjuctions, disjunctions and
+%% negations respectively.
+
 In their approach they do not follow Euclid's ways of proving and also
 do not follow the same order as his. They seem to approach
 superposition as equality between figures, and as they mention in
-section Checking the proofs in Coq, they had to adapt to the tool and
-reused theorems as implicit assumptions for each lemma. They claim
-that their approach is more complete and adds to Euclid's work and
-that they are the first to do a non-paper-and-pencil formalization
-that proves correct and valid Book I of Euclid and their
-\quotes{corrected proofs of those propositions, close to Euclid's ideas}.
+Section~XX TODO \quotes{Checking the proofs in Coq},
+they had to adapt to the tool and
+reused theorems as implicit assumptions for each lemma.
+
+% TODO: unclear. Explain how they solve or circumvent the core problem.
+
+They claim that their approach is more complete than previous
+approaches to formalizing Euclid's work.  and that they are the first
+to do a non-paper-and-pencil formalization.
+They also claim that their work
+  adds to Euclid's work
+and
+  proves correct and valid
+      Book I of Euclid
+    and
+      their
+      \quotes{corrected proofs of those propositions, close to Euclid's ideas}.
+
+
 However, they too do not interpret superposition in the way Euclid
 does and try to find other ways around this in the construction of
 propositions and their proofs. For example, when they say that
@@ -238,7 +287,7 @@ this.
 \label{sec:diagr-infer}
 
 On the other hand, there are systems that act on diagrams like the one
-of \citet{Miller2001ADF}. In his approach Miller creates a
+of \citet{miller:2001}. In his approach Miller creates a
 collection of rules that are divided into categories according to the
 implication of the rule on the diagram, similar to the ones of Avigad
 et al. First are the construction rules, inference rules follow and
@@ -276,6 +325,9 @@ The main issue with this approach is that it does not fully take
 advantage of what Euclid essentially aims at, which is also the major
 issue that most publications have difficulty interpreting.
 
+
+\subsection{Remarks}
+
 Euclid does indeed have some more vague points, on the contrary to
 what these publications suggest, work best through his work, since the
 vague points are not important to the application of a proposition,
@@ -284,12 +336,27 @@ need no more clarification, if ones does specify in more detail the
 context of each proposition might become more logically complete, but
 it will lose the point of versatility.
 
-One approach acts directly on diagrams \cite{Miller2001ADF} the other
-solely with logic \cite{AVIGAD2009,beeson2019proof} to tackle the
+One approach acts directly on diagrams
+while others use solely logic to tackle the
 problem. However, Euclid relies both on diagrams and logic in his
 proofs. To encode so much information may be challenging, which means
 that, isolating one or the other requires even more effort in
 designing and applying such a method.
+
+
+
+The notion of Functional Programming (FP) one would say is to
+transform a problem into a set of steps one should 
+execute, with the intent to focus on the computation of the problem.
+Thus, instead of creating multiple paths for execution at a time,
+functional programming focuses on one main goal and each function 
+is a step towards this goal.
+
+We aim that in this process, every step is a function, which 
+itself is a part of the solution to a greater goal. A \textit{function} in 
+FP takes a number of arguments, that it will use to compute the 
+respective output. 
+
 
 
 \section{We Need A Name}
