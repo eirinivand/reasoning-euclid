@@ -94,15 +94,26 @@ Reasoning; mathematics; Euclid
 The most widely known mathematician in geometry is Euclid form Ancient
 Greece and Euclid's most renowned work are the \textit{Elements}
 \citep{heath:1956}. The Elements consist of thirteen books, the first
-six being about geometry. In the first book Euclid starts by stating
-the perquisites for the rest of his books by declaring twenty three
-definitions, five postulates and nine axioms. After the axioms, the
-propositions and their proofs begin.
+six being about geometry of the plane and are based on the ruler-and-compass 
+approach. The first book contains five postulates and nine axioms along with 
+twenty three definitions and forty eight propositions. Postulates and axioms 
+may only be found in the first book. We based this work on the first book 
+because it contains the core elements that are used through out the Elements, 
+thus sets a solid base for implementing the rest as well.
 
-A proposition by Euclid consist of some given statements, the
-construction part and the proof. The given statements represent the
-base upon which he will built the construction and then the proof, so
-as to conclude to the proposition.  A basic characteristic of Euclid's
+Euclid’s propositions have a consistent structure; a set of statements, a 
+construction and a proof. The given statements are used to construct a diagram.
+Then the proof is obtained using a combination of the given statements, 
+observations made on the diagram, definitions, postulates, axioms and 
+previously defined propositions. 
+%% The proofs are made specific enough to suit the needs of the 
+%% proposition, but also general enough to be applicable in different 
+%% situations. Which is made clear through out the Elements from the fact that 
+%% propositions are reapplied in many occasions. Occasions as such can be 
+%% propositions that even with a visually very different diagram, an earlier 
+%% proposition can be applied using a subset of the given statements or even 
+%% observations from the diagram of the current proposition.
+A basic characteristic of Euclid's
 Elements is that each proposition once it is proven, it is considered
 as given knowledge and so it is used inside other later propositions.
 
@@ -297,19 +308,15 @@ Miller's \term{Lemma Incorporation Theorem} is used in his system to
 identify the forms that a diagram may take supposing an ancestor diagram.
 
 \begin{figure}[t]
-  \centering
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{euclid-I1}
-    \caption{General representation of diagram from proposition I.1}
-  \end{subfigure}
-  \hfil
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{miller-fig320-I1}
-    \caption{Resulting image of Proposition I.1 from Miller \cite{Miller2001ADF}.}
-  \end{subfigure}
-  
-  \caption{Different representations of Proposition I.1}
-  \label{fig:milleri1}
+	\centering
+	\subfloat[General representation of diagram from proposition I.1 ]{%
+		\includegraphics[width=\textwidth]{euclid-I1}}
+	\hfil
+	\subfloat[Resulting image of Proposition I.1 from \cite{miller:2001}. ]{%
+		\includegraphics[width=\textwidth]{miller-fig320-I1}}
+	
+	\caption{Different representations of Proposition I.1}
+	\label{fig:milleri1}
 \end{figure}
 
 This becomes useful in the sense of using this lemma to get the
