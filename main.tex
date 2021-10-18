@@ -153,7 +153,12 @@ The construction rules include rules about points, lines, circles and
 intersections of the above.
 
 Then they define the \term{diagrammatic inference} axioms, which
-replace the diagram's purpose.
+replace the diagram's purpose. While traditional diagrammatic 
+inference acts on manipulating a diagram, this approach uses a set of 
+axioms, construction and inference rules to conclude on the \quotes{direct 
+consequences} of those. They attempt to define this notion and 
+describe why these attempts may not be adequate and in which cases 
+they work. 
 %TODO: explain how these are not the same as diagrammatic inference below
 
 Then are the rules about \term{transfer inferences} on the diagrams,
@@ -217,7 +222,7 @@ representation.
 
 Last but not least, I will refer to their statement of Euclid not
 stating enough information in his constructions. They take as an
-example proposition I.2, claiming that point $a$ is may not be inside
+example proposition I.2, claiming that point $a$ may not be inside
 circle $\beta$ and a clarification of $da<dg$ should be made. This is
 again misinterpreted since if one follows Euclid's steps to the
 construction, even if $a$ fell out of circle the entire proof still
@@ -226,10 +231,10 @@ giving Figure~\ref{fig:prop-i2} (right). In this case the
 circle with center $B$ (correspinding to circle $\alpha$ on the
 left-hand side figure), would intersect with line
 segment $Bd2$ (right) or $db$ (left) in two points.
-%% TODO rewrite
-When one takes the point that is between $d2$ and $B$ to name $h2$ and
-forms circle with center $d2$ and radius of $d2h2$ or $\beta$. Then
-line segment $Ad2$ intersects with circle $\beta$ at point $l2$ and
+% TODO rewrite
+When one takes the point that is between $d2$ and $B$ ($h2$) and
+forms circle with center $d2$ and radius of $d2h2$ (right) or $\beta$ (left). 
+Then line segment $Ad2$ intersects with the previous circle at point $l2$ and 
 Euclid's proof stands exactly the same, even in this case, since again
 the proposition's aim was to create a line segment from $A$ equal to
 $BC$ and that is achieved.
@@ -238,13 +243,12 @@ $BC$ and that is achieved.
 \begin{figure}
   \centering
 
+  \break
   \subfloat[Proposition~I.2 as formed by Avigad et al.]{%
-    \resizebox*{0.3\textwidth}{!}{\includegraphics[scale=0.7]{avigad-I2}}}
+    \resizebox*{0.4\textwidth}{!}{\includegraphics[scale=0.7]{avigad-I2}}}
   \hspace{3pt}
-
   \subfloat[The counter-example that Avigad et al. offer to argue that  ]{%
-    \resizebox*{0.3\textwidth}{!}{\includegraphics[scale=0.6]{avigad-I2-alt}}}
-
+    \resizebox*{0.4\textwidth}{!}{\includegraphics[scale=0.6]{avigad-I2-alt}}}
   \caption{Different diagrams that both support the proof of Proposition~I.2}
   \label{fig:prop-i2}
 \end{figure}
@@ -267,9 +271,9 @@ Euclid's Elements.
 
 In their approach they do not follow Euclid's ways of proving and also
 do not follow the same order as his. They seem to approach
-superposition as equality between figures, and as they mention in
-Section~XX TODO \quotes{Checking the proofs in Coq},
-they had to adapt to the tool and
+superposition as equality between figures and define equality using 
+\citet{hartshorne:2000} definitions redefined in first-order axioms.
+What is more, they had to adapt to the tool and
 reused theorems as implicit assumptions for each lemma.
 
 % TODO: unclear. Explain how they solve or circumvent the core problem.
@@ -277,14 +281,9 @@ reused theorems as implicit assumptions for each lemma.
 They claim that their approach is more complete than previous
 approaches to formalizing Euclid's work.  and that they are the first
 to do a non-paper-and-pencil formalization.
-They also claim that their work
-  adds to Euclid's work
-and
-  proves correct and valid
-      Book I of Euclid
-    and
-      their
-      \quotes{corrected proofs of those propositions, close to Euclid's ideas}.
+They also claim that their work to add to Euclid's work and prove correct and 
+valid Book I of Euclid, using their additions, including \quotes{corrected 
+proofs of those propositions, that are close to Euclid's ideas}.
 
 
 However, they too do not interpret superposition in the way Euclid
