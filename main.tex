@@ -91,82 +91,95 @@ Reasoning; mathematics; Euclid
 \section{Background}
 \label{sec:bg}
 
+
+Although the Elements where considered flawless for many years,
+Euclid's work was not as clear concerning the purity of logic.
+Either that was because something came from observation or assumption, there
+where many times in which Euclid would use non-logically proven
+assumptions \citep[Sections~1.1 and~2]{harrison:2009}.
+There have been some attempts to axiomatize, add to and fill the gaps of
+Euclid's work. In this section we describe the latest approaches on refining
+the Elements. However, we first need to understand a bit about Euclid's work
+itself.
+
+\section{The Elements}
 The most widely known mathematician in geometry is Euclid form Ancient
 Greece and Euclid's most renowned work are the \textit{Elements}
 \citep{heath:1956}. The Elements consist of thirteen books, the first
-six being about geometry of the plane and are based on the ruler-and-compass 
-approach. The first book contains five postulates and nine axioms along with 
-twenty three definitions and forty eight propositions. Postulates and axioms 
-may only be found in the first book. We based this work on the first book 
-because it contains the core elements that are used through out the Elements, 
+six being about geometry of the plane and are based on the ruler-and-compass
+approach. The first book contains five postulates and nine axioms along with
+twenty three definitions and forty eight propositions. Postulates and axioms
+may only be found in the first book. We based this work on the first book
+because it contains the core elements that are used through out the Elements,
 thus sets a solid base for implementing the rest as well.
 
-Euclid’s propositions have a consistent structure; a set of statements, a 
+Euclid’s propositions have a consistent structure; a set of statements, a
 construction and a proof. The given statements are used to construct a diagram.
-Then the proof is obtained using a combination of the given statements, 
-observations made on the diagram, definitions, postulates, axioms and 
-previously defined propositions. 
-%% The proofs are made specific enough to suit the needs of the 
-%% proposition, but also general enough to be applicable in different 
-%% situations. Which is made clear through out the Elements from the fact that 
-%% propositions are reapplied in many occasions. Occasions as such can be 
-%% propositions that even with a visually very different diagram, an earlier 
-%% proposition can be applied using a subset of the given statements or even 
+Then the proof is obtained using a combination of the given statements,
+observations made on the diagram, definitions, postulates, axioms and
+previously defined propositions.
+%% The proofs are made specific enough to suit the needs of the
+%% proposition, but also general enough to be applicable in different
+%% situations. Which is made clear through out the Elements from the fact that
+%% propositions are reapplied in many occasions. Occasions as such can be
+%% propositions that even with a visually very different diagram, an earlier
+%% proposition can be applied using a subset of the given statements or even
 %% observations from the diagram of the current proposition.
 A basic characteristic of Euclid's
 Elements is that each proposition once it is proven, it is considered
 as given knowledge and so it is used inside other later propositions.
 
-Although the Elements where considered flawless for many years,
-Euclid's work was not as clear concerning the purity of logic, instead
-there where many times in which he would use non-logically proven
-assumptions \citep[Sections~1.1 and~2]{harrison:2009}.
+
 
 
 \subsection{Automated Deduction for Geometry Theorems}
 \label{sec:atp-geometry}
 
-Whether that was because
-something came from observation or from assumption. This is where
-\citet{hilbert:1899} firstly stepped in and axiomatized
-Euclid's geometry by redefining the basis of Euclid's definitions,
+The first to step in and axiomatize Euclid's work was \citet{hilbert:1899}.
+He did this by redefining the basis of Euclid's definitions,
 replacing and removing some axioms concerning the plane. There are
 also other known axiomatizations of the Elements such as
-by \citet{tarski:1959} and \citet{birkhoff:1932}.
+\citet{tarski:1959} and \citet{birkhoff:1932}.
 
-\citet{avigad-etal:2009} present a formal system that models
+In recent years, \citet{avigad-etal:2009} presented a formal system that models
 Books I to IV from Euclid's Elements. In order to address the matter
 of facts that Euclid takes as observations from the diagram, they set
-a list of axioms to replace the conclusions derived from the diagram
-Euclid constructs. These axioms are in their core rules that depict
+a list of axioms to replace them.
+
+These axioms are in their core rules that depict
 the diagram's purpose and part in the proof. They state that in some
 cases where Euclid reads geometric relations directly from the
 diagram, in their system this has to be met with one of the system's
 rules. These axioms are divided into categories according to the
-impact they depict from the diagram.
+impact they depict from the diagram. The categories defined are the following.
 
-First are \term{construction rules} these are the base of their rule
-system and are described as the
-\quotes{built-in theorems that are available from the start}.
-The construction rules include rules about points, lines, circles and
-intersections of the above.
 
-Then they define the \term{diagrammatic inference} axioms, which
-replace the diagram's purpose. While traditional diagrammatic 
-inference acts on manipulating a diagram, this approach uses a set of 
-axioms, construction and inference rules to conclude on the \quotes{direct 
-consequences} of those. They attempt to define this notion and 
-describe why these attempts may not be adequate and in which cases 
-they work. 
-%TODO: explain how these are not the same as diagrammatic inference below
+\begin{list}{$\square$}{\leftmargin=3.5em \itemindent=0em}
+	\item[\textit{construction rules}] These are the base of their axiom
+	system and are described as the	\quotes{built-in theorems that are
+	available from the start}. They include rules about
+	points, lines, circles and intersections of the previous.
 
-Then are the rules about \term{transfer inferences} on the diagrams,
-their intention is to depict how the changes on a diagram, as Euclid
-describes them, apply on their facts.
+	\item[\textit{diagrammatic inference axioms}] These replace the diagram's
+	purpose.
+	 While traditional diagrammatic inference acts on manipulating a diagram,
+	 this approach uses a set of axioms, construction and inference rules to
+	 conclude on the \quotes{direct consequences} of those. They attempt to
+	 define this notion and describe in which cases they work and why these
+	 attempts may not be adequate.
+	 %TODO: explain how these are not the same as diagrammatic inference below
 
-The last rules they define are about \term{superposition inferences},
-these rules are about how one diagram relates to another and the rules
-that apply to the former apply to the latter as well.
+	 \item[\textit{transfer inference axioms}] Their intention is to depict how
+	 the changes applied on a diagram by Euclid, translate to their facts.
+
+	 \item[\textit{superposition inferences axioms}] these depict how one
+	 diagram relates to another i.e. the rules that apply to the former apply
+	 to the latter as well.
+	 
+	  \item[\textit{direct consequence}] They conclude this section by 
+	  explaining the \quotes{direct consequence} notion, that they based their 
+	  \quotes{diagrammatic inference} on. 
+\end{list}
 
 
 \begin{figure}[t]
@@ -178,11 +191,10 @@ that apply to the former apply to the latter as well.
 \end{figure}
 
 
-They conclude this section by explaining the \term{direct consequence}
-notion, that they based their approach on. However, while Euclid takes
+However, while Euclid takes
 some parts of the construction as granted, in their system they claim
 that more specificity is needed in order to make use of their rules.
-In one of the examples they give is with Proposition I.9., where
+One of the examples they give is Proposition I.9., where
 Euclid generates a triangle $dfe$ (as seen in
 Figure~\ref{fig:avigadi9}), they claim that the $f$ point needs more
 clarification for its placing in the diagram because it may fall out
@@ -200,16 +212,7 @@ present as figures can be generated solely from the proposition's
 statement, the construction steps of the proposition eliminate the
 second where there is one point less.
 
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.7]{avigad-fig9-I35}
-  \caption[Avigad et al Approach I.35]{Three cases for
-    Proposition~I.35 considered by Avigad et al. \cite{avigad-etal:2009}.}
-  \label{fig:avigadi35}
-\end{figure}
-
-However, Euclid's aim is to prove the proposition, and while the proof
+Euclid's aim is to prove the proposition, and while the proof
 might not be exactly the same for all the cases considered in
 Figure~\ref{fig:avigadi35}, the proposition is true for all which is
 of most importance. Euclid is vague enough where he should be, since
@@ -219,7 +222,16 @@ provable. It appears that Euclid is making use of the open world
 assumption, which makes his work all the more attractive to potential
 representation.
 
-Last but not least, I will refer to their statement of Euclid not
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{avigad-fig9-I35}
+  \caption[Avigad et al Approach I.35]{Three cases for
+    Proposition~I.35 considered by Avigad et al. \cite{avigad-etal:2009}.}
+  \label{fig:avigadi35}
+\end{figure}
+
+
+Last but not least, we will refer to their statement of Euclid not
 stating enough information in his constructions. They take as an
 example proposition I.2, claiming that point $a$ may not be inside
 circle $\beta$ and a clarification of $da<dg$ should be made. This is
