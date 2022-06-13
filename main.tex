@@ -91,6 +91,15 @@ Reasoning; mathematics; Euclid
 \section{Background}
 \label{sec:bg}
 
+\comment{TODO Discuss} {whether we could add that we are suggesting a way of 
+assembling diagrams for custom and predefined proofs using the clojure library  
+and some code. Possibly need to also address interactive proving.}
+
+In this section we will go through some key characteristics about Euclid's 
+Elements and relevant prior work. The current work can be summarized in the 
+following sections; interactive theorem proving in geometry, automated 
+deduction for geometry theorems \citep{avigad-etal:2009, beeson-etal:2019, 
+miller:2001}, visualization of the theorem.
 
 Although the Elements where considered flawless for many years,
 Euclid's work was not as clear concerning the purity of logic.
@@ -102,7 +111,7 @@ Euclid's work. In this section we describe the latest approaches on refining
 the Elements. However, we first need to understand a bit about Euclid's work
 itself.
 
-\section{The Elements}
+\subsection{The Elements}
 The most widely known mathematician in geometry is Euclid form Ancient
 Greece and Euclid's most renowned work are the \textit{Elements}
 \citep{heath:1956}. The Elements consist of thirteen books, the first
@@ -118,18 +127,17 @@ construction and a proof. The given statements are used to construct a diagram.
 Then the proof is obtained using a combination of the given statements,
 observations made on the diagram, definitions, postulates, axioms and
 previously defined propositions.
-%% The proofs are made specific enough to suit the needs of the
-%% proposition, but also general enough to be applicable in different
-%% situations. Which is made clear through out the Elements from the fact that
-%% propositions are reapplied in many occasions. Occasions as such can be
-%% propositions that even with a visually very different diagram, an earlier
-%% proposition can be applied using a subset of the given statements or even
-%% observations from the diagram of the current proposition.
+\comment{Not sure if I should keep this possibly need to rephrase and/or add 
+examples}{ The proofs are made specific enough to suit the needs of the
+proposition, but also general enough to be applicable in different
+situations. Which is made clear through out the Elements from the fact that
+propositions are reapplied in many occasions. Occasions as such can be
+propositions that even with a visually very different diagram, an earlier
+proposition can be applied using a subset of the given statements or even
+observations from the diagram of the current proposition.}
 A basic characteristic of Euclid's
 Elements is that each proposition once it is proven, it is considered
 as given knowledge and so it is used inside other later propositions.
-
-
 
 
 \subsection{Automated Deduction for Geometry Theorems}
@@ -167,8 +175,9 @@ impact they depict from the diagram. The categories defined are the following.
 	 conclude on the \quotes{direct consequences} of those. They attempt to
 	 define this notion and describe in which cases they work and why these
 	 attempts may not be adequate.
-	 %TODO: explain how these are not the same as diagrammatic inference below
-
+	 \comment{TODO}{explain how these are not the same as diagrammatic 
+	 inference below}
+ 
 	 \item[\textit{transfer inference axioms}] Their intention is to depict how
 	 the changes applied on a diagram by Euclid, translate to their facts.
 
@@ -239,17 +248,17 @@ again misinterpreted since if one follows Euclid's steps to the
 construction, even if $a$ fell out of circle the entire proof still
 stands true. To prove this, one can consider the case where $ab>bc$
 giving Figure~\ref{fig:prop-i2} (right). In this case the
-circle with center $B$ (correspinding to circle $\alpha$ on the
+circle with center $B$ (corresponding to circle $\alpha$ on the
 left-hand side figure), would intersect with line
 segment $Bd2$ (right) or $db$ (left) in two points.
-% TODO rewrite
+\comment{TODO rewrite}{
 When one takes the point that is between $d2$ and $B$ ($h2$) and
 forms circle with center $d2$ and radius of $d2h2$ (right) or $\beta$ (left). 
 Then line segment $Ad2$ intersects with the previous circle at point $l2$ and 
 Euclid's proof stands exactly the same, even in this case, since again
 the proposition's aim was to create a line segment from $A$ equal to
 $BC$ and that is achieved.
-
+}
 
 \begin{figure}
   \centering
@@ -271,14 +280,14 @@ by \citet{beeson-etal:2019} approaches the matter of
 In their approach they used a custom-designed representation of
 Euclid's Elements.
 
-%% NOTE: Technical detail. To be deleted.
-%% In this representation they merged every axiom, definition,
-%% postulate, lemma and proposition into respective letters or
-%% combination of such.  The most natural thing in doing so, following
-%% Euclid, is to name variables with one character. Then, they used
-%% two-character names for the relations since they exceed 24, and
-%% used $AN$, $OR$ and $NO$ for conjuctions, disjunctions and
-%% negations respectively.
+\comment{NOTE: Technical detail. To be deleted.}{
+In this representation they merged every axiom, definition,
+postulate, lemma and proposition into respective letters or
+combination of such.  The most natural thing in doing so, following
+Euclid, is to name variables with one character. Then, they used
+two-character names for the relations since they exceed 24, and
+used $AN$, $OR$ and $NO$ for conjuctions, disjunctions and
+negations respectively. }
 
 In their approach they do not follow Euclid's ways of proving and also
 do not follow the same order as his. They seem to approach
@@ -287,7 +296,8 @@ superposition as equality between figures and define equality using
 What is more, they had to adapt to the tool and
 reused theorems as implicit assumptions for each lemma.
 
-% TODO: unclear. Explain how they solve or circumvent the core problem.
+\comment{TODO}{unclear. Explain how they solve or circumvent the 
+core problem.}
 
 They claim that their approach is more complete than previous
 approaches to formalizing Euclid's work.  and that they are the first
